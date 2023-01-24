@@ -1,5 +1,145 @@
 import styled from "styled-components";
 
+
+
+
+
+
+
+
+
+export const RecomendedWrapper = styled.div`
+width: 100%;
+height:90%;
+border: 1px solid green;
+flex-wrap: wrap;
+gap: 10px;
+`
+export const RecomendedContainer = styled.div`
+  width: 100%;
+  height: 600px;
+  border: 1px solid white;
+`;
+
+export const MovieTitle = styled.div`
+  color: white;
+  font-size: 20px;
+  @media screen and (max-width: 400px) {
+    font-size: 10px;
+  }
+`;
+export const CardContainerBot = styled.div`
+  position: absolute;
+  width: 300px;
+  height: 60px;
+  bottom: 0;
+  display: flex;
+  padding: 5px;
+  flex-direction: column;
+  @media screen and (max-width: 400px) {
+    width: 150px;
+  }
+`;
+export const PlayButton = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+`;
+
+export const PlayButtonWrapper = styled.div`
+  width: 150px;
+  height: 50px;
+  position: absolute;
+  top: 40%;
+  left: 35%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background-color: gray;
+  opacity: 0.2;
+  border-radius: 30px;
+  &:hover {
+    opacity: 0.7;
+  }
+  &:active {
+    scale: 0.9;
+  }
+  @media screen and (max-width: 400px) {
+    display: none;
+  }
+`;
+export const BookmarkIconWrapper = styled.div`
+  width: 30px;
+  height: 30px;
+  background-color: gray;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const CardContainerTop = styled.div`
+  width: 100%;
+  height: 35px;
+  position: absolute;
+  z-index: 9;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+`;
+
+export const TrendingCardContainer = styled.div`
+  width: 470px;
+  height: 230px;
+  display: flex;
+  margin: 0px 20px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  @media screen and (max-width: 400px) {
+    width: 260px;
+    height: 130px;
+  }
+`;
+
+export const TrendingTitle = styled.h1`
+  color: white;
+  font-size: 30px;
+  margin: 10px 0px;
+  @media screen and (max-width: 400px) {
+    font-size: 18px;
+  }
+`;
+export const TrendingSwiper = styled.div`
+  width: 100%;
+  height: 280px;
+  display: flex;
+  align-items: center;
+  overflow-x: scroll;
+  @media screen and (max-width: 400px) {
+    height: 200px;
+  }
+`;
+
+export const TrendingContainer = styled.div`
+  width: 100%;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  @media screen and (max-width: 400px) {
+    height: 280px;
+  }
+`;
+export const HomeContainer = styled.div`
+  width: 100%;
+  height: 700px;
+`;
+
 export const InputWrapper = styled.div`
   width: 100%;
   height: 80px;
@@ -18,11 +158,13 @@ export const RightSideWrapper = styled.div`
   height: 100%;
   width: 90vw;
   padding: 20px;
-  border: 1px solid white;
+  border: 1px solid green;
   display: flex;
   flex-direction: column;
+  overflow-y: scroll;
   @media screen and (max-width: 400px) {
     margin-top: 20px;
+    padding: 0;
   }
 `;
 

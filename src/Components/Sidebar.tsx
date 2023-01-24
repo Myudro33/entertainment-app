@@ -18,12 +18,12 @@ const Sidebar = ({ page, setpage }) => {
       icon: page === "home" ? homeActive : home,
     },
     {
-      name: "movies",
-      icon: page === "movies" ? moviesActive : movies,
+      name: "Movie",
+      icon: page === "Movie" ? moviesActive : movies,
     },
     {
-      name: "series",
-      icon: page === "series" ? seriesActive : series,
+      name: "TV Series",
+      icon: page === "TV Series" ? seriesActive : series,
     },
     {
       name: "bookmarks",
