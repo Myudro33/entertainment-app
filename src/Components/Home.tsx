@@ -12,7 +12,6 @@ import MovieCard from "./MovieCard";
 import TrendingCard from "./TrendingCard";
 
 const Home = ({ store, data }: HomeProps) => {
-  console.log(data);
 
   return (
     <HomeContainer>
@@ -21,6 +20,7 @@ const Home = ({ store, data }: HomeProps) => {
         <TrendingSwiper>
           {data.map((trend: TrendingCardProps) => (
             <TrendingCard
+            key={trend.title}
               category={trend.category}
               isTrending={trend.isTrending}
               rating={trend.rating}
@@ -37,6 +37,7 @@ const Home = ({ store, data }: HomeProps) => {
         <RecomendedWrapper>
           {store.map((movie: TrendingCardProps) => (
             <MovieCard
+            key={movie.title}
               category={movie.category}
               isTrending={movie.isTrending}
               rating={movie.rating}
