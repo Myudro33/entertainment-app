@@ -1,24 +1,27 @@
 import styled from "styled-components";
 
-
-
-
-
-
-
-
+export const MovieCardContainer = styled.div`
+  width: 280px;
+  height: 200px;
+  margin: 20px;
+  position: relative;
+  @media screen and (max-width: 770px) {
+    width: 270px;
+  }
+`;
 
 export const RecomendedWrapper = styled.div`
-width: 100%;
-height:90%;
-border: 1px solid green;
-flex-wrap: wrap;
-gap: 10px;
-`
+  width: 100%;
+  height: 90%;
+  flex-wrap: wrap;
+  display: flex;
+  @media screen and (max-width: 400px) {
+    justify-content: center;
+  }
+`;
 export const RecomendedContainer = styled.div`
   width: 100%;
-  height: 600px;
-  border: 1px solid white;
+  height: auto;
 `;
 
 export const MovieTitle = styled.div`
@@ -48,11 +51,11 @@ export const PlayButton = styled.div`
   height: 100%;
 `;
 
-export const PlayButtonWrapper = styled.div`
-  width: 150px;
-  height: 50px;
+export const PlayButtonWrapper = styled.div<any>`
+  width: ${(props) => (props.small ? "100px" : "150px")};
+  height: ${(props) => (props.small ? "40px" : "50px")};
   position: absolute;
-  top: 40%;
+  top: ${(props) => (props.small ? "30%" : "40%")};
   left: 35%;
   display: flex;
   align-items: center;
@@ -61,6 +64,7 @@ export const PlayButtonWrapper = styled.div`
   background-color: gray;
   opacity: 0.2;
   border-radius: 30px;
+  cursor: pointer;
   &:hover {
     opacity: 0.7;
   }
@@ -79,6 +83,11 @@ export const BookmarkIconWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 10px 10px 0px 0px;
+  cursor: pointer;
+  &:active {
+    scale: 0.9;
+  }
 `;
 
 export const CardContainerTop = styled.div`
@@ -143,7 +152,6 @@ export const HomeContainer = styled.div`
 export const InputWrapper = styled.div`
   width: 100%;
   height: 80px;
-  margin: auto;
   padding: 10px;
   display: flex;
   align-items: center;
@@ -158,7 +166,6 @@ export const RightSideWrapper = styled.div`
   height: 100%;
   width: 90vw;
   padding: 20px;
-  border: 1px solid green;
   display: flex;
   flex-direction: column;
   overflow-y: scroll;

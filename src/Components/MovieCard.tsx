@@ -1,39 +1,34 @@
 import React, { useState } from "react";
 import {
-  TrendingCardContainer,
-  CardContainerTop,
   BookmarkIconWrapper,
-  PlayButtonWrapper,
-  PlayButton,
   CardContainerBot,
+  CardContainerTop,
+  MovieCardContainer,
   MovieTitle,
+  PlayButton,
+  PlayButtonWrapper,
 } from "../Styled";
 import { TrendingCardProps } from "../Types";
 import bookmarked from "../assets/icon-bookmark-empty.svg";
 import notBookmarked from "../assets/icon-bookmark-full.svg";
 import playIcon from "../assets/icon-play.svg";
 
-const TrendingCard = ({
-  title,
+const MovieCard = ({
   category,
+  isBookmarked,
   isTrending,
   rating,
   thumbnail,
+  title,
   year,
-  isBookmarked,
 }: TrendingCardProps) => {
   const [show, setshow] = useState(false);
 
   return (
-    <TrendingCardContainer
+    <MovieCardContainer
       onMouseEnter={() => setshow(true)}
       onMouseLeave={() => setshow(false)}
     >
-      <img
-        style={{ width: "100%", height: "100%", objectFit: "cover" }}
-        src={`${process.env.REACT_APP_IMAGE_API_KEY}${thumbnail?.regular.large}`}
-        alt="trending img"
-      />
       <CardContainerTop>
         <BookmarkIconWrapper>
           <img
@@ -43,8 +38,13 @@ const TrendingCard = ({
           />
         </BookmarkIconWrapper>
       </CardContainerTop>
+      <img
+        style={{ width: "100%", height: "70%", objectFit: "cover" }}
+        src={`${process.env.REACT_APP_IMAGE_API_KEY}${thumbnail?.regular.large}`}
+        alt="trending img"
+      />
       {show && (
-        <PlayButtonWrapper>
+        <PlayButtonWrapper small>
           <PlayButton>
             <img src={playIcon} alt="playicon" />
             <h3>Play</h3>
@@ -57,8 +57,8 @@ const TrendingCard = ({
         >{`${year} · ${category} · ${rating}`}</p>
         <MovieTitle>{title}</MovieTitle>
       </CardContainerBot>
-    </TrendingCardContainer>
+    </MovieCardContainer>
   );
 };
 
-export default TrendingCard;
+export default MovieCard;

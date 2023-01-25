@@ -5,9 +5,10 @@ import {
   TrendingSwiper,
   TrendingTitle,
   RecomendedContainer,
-  RecomendedWrapper
+  RecomendedWrapper,
 } from "../Styled";
 import { HomeProps, TrendingCardProps } from "../Types";
+import MovieCard from "./MovieCard";
 import TrendingCard from "./TrendingCard";
 
 const Home = ({ store, data }: HomeProps) => {
@@ -32,10 +33,20 @@ const Home = ({ store, data }: HomeProps) => {
         </TrendingSwiper>
       </TrendingContainer>
       <RecomendedContainer>
-      <TrendingTitle>Recomended</TrendingTitle>
-      <RecomendedWrapper>
-        
-      </RecomendedWrapper>
+        <TrendingTitle>Recomended</TrendingTitle>
+        <RecomendedWrapper>
+          {store.map((movie: TrendingCardProps) => (
+            <MovieCard
+              category={movie.category}
+              isTrending={movie.isTrending}
+              rating={movie.rating}
+              thumbnail={movie.thumbnail}
+              title={movie.title}
+              year={movie.year}
+              isBookmarked={movie.isBookmarked}
+            />
+          ))}
+        </RecomendedWrapper>
       </RecomendedContainer>
     </HomeContainer>
   );
