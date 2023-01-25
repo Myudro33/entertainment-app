@@ -8,18 +8,20 @@ export interface TrendingCardProps{
   isBookmarked?:boolean,
   rating?:string,
   thumbnail?:{
-    regular:{
-      large:string,
-      medium:string
-      small:string  
+    regular?:{
+      large?:string,
+      medium?:string
+      small?:string  
     },
-    trending:{
-      large:string,
-      small:string
+    trending?:{
+      large?:string,
+      small?:string
     }
   },
   title?:string,
   year?:number
+  setbookmarkedData?:React.Dispatch<React.SetStateAction<{}[]>>,
+
 }
 export interface HomeProps {
   data: {}[];

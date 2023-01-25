@@ -10,15 +10,18 @@ import MovieCard from "./MovieCard";
 interface PageProps {
   data: {}[];
   page: string;
+  setbookmarkedData: React.Dispatch<React.SetStateAction<any>>;
 }
 
-const Page = ({ data, page }: PageProps) => {
+const Page = ({ data, page, setbookmarkedData }: PageProps) => {
+  
   return (
     <RecomendedContainer>
       <TrendingTitle>{page}</TrendingTitle>
       <RecomendedWrapper>
         {data.map((movie: TrendingCardProps) => (
           <MovieCard
+            setbookmarkedData={setbookmarkedData}
             key={movie.title}
             category={movie.category}
             isTrending={movie.isTrending}
