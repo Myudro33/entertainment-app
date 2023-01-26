@@ -22,7 +22,7 @@ const App = () => {
   return (
     <Container>
       <Sidebar page={page} setpage={setpage} />
-      <RightSide page={page} value={value} setvalue={setvalue} data={store} />
+      <RightSide page={page} value={value} setvalue={setvalue} data={store} setstore={setstore} />
     </Container>
   );
 };

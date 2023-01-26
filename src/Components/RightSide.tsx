@@ -8,9 +8,8 @@ import Page from "./Page";
 import Bookmarks from "./Bookmarks";
 import { useEffect } from "react";
 
-const RightSide = ({ value, setvalue, data, page }: RightSideProps) => {
+const RightSide = ({ value, setvalue, data, page,setstore }: RightSideProps) => {
   const [bookmarkedData, setbookmarkedData] = useState(store.filter((item)=>item.isBookmarked));
-console.log(bookmarkedData);
 
 
   return (
@@ -20,6 +19,8 @@ console.log(bookmarkedData);
         <Home
           data={data}
           store={store.filter((movie) => movie.isTrending !== true)}
+          setstore={setstore}
+          value={value}
         />
       )}
       {page !== "home" && page !== "bookmarks" && (

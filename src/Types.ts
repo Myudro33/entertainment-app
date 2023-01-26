@@ -26,12 +26,15 @@ export interface TrendingCardProps{
 export interface HomeProps {
   data: {}[];
   store: {}[];
+  setstore:React.Dispatch<React.SetStateAction<{}[]>>
+  value:string
 }
 export interface RightSideProps{
     value:string,
     setvalue:React.Dispatch<React.SetStateAction<string>>;
     data:{}[],
     page:string
+    setstore:React.Dispatch<React.SetStateAction<{}[]>>
 }
 export interface InputTypes {
   value: string;

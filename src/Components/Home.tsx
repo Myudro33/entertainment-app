@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   HomeContainer,
   TrendingContainer,
@@ -11,7 +11,13 @@ import { HomeProps, TrendingCardProps } from "../Types";
 import MovieCard from "./MovieCard";
 import TrendingCard from "./TrendingCard";
 
-const Home = ({ store, data }: HomeProps) => {
+const Home = ({ store, data,setstore,value }: HomeProps) => {
+
+
+
+useEffect(()=>{
+  setstore(data.filter((item:any)=>item.title.startsWith(value)))
+},[value])
 
   return (
     <HomeContainer>
